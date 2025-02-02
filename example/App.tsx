@@ -18,9 +18,7 @@ function App(): React.JSX.Element {
         setContacts(contacts);
       })
       .catch(console.error);
-    NitroContacts.getContact('1').then(
-      console.log,
-    );
+    NitroContacts.getContact('1').then(console.log);
     NitroContacts.authorizationStatus().then(console.log);
   }, []);
 
