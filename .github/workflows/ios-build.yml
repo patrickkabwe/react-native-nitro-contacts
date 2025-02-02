@@ -12,6 +12,7 @@ on:
       - 'cpp/**'
       - 'ios/**'
       - '**/Podfile.lock'
+      - '**/bun.lock'
       - '**/*.podspec'
       - '**/react-native.config.js'
       - '**/nitro.json'
@@ -24,6 +25,7 @@ on:
       - 'cpp/**'
       - 'ios/**'
       - '**/Podfile.lock'
+      - '**/bun.lock'
       - '**/*.podspec'
       - '**/react-native.config.js'
       - '**/nitro.json'
@@ -70,8 +72,8 @@ jobs:
         run: "set -o pipefail && xcodebuild \
           CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ \
           -derivedDataPath build -UseModernBuildSystem=YES \
-          -workspace ExampleApp.xcworkspace \
-          -scheme ExampleApp \
+          -workspace NitroContactsExample.xcworkspace \
+          -scheme NitroContactsExample \
           -sdk iphonesimulator \
           -configuration Debug \
           -destination 'platform=iOS Simulator,name=iPhone 16' \
@@ -120,8 +122,8 @@ jobs:
         run: "set -o pipefail && xcodebuild \
           CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ \
           -derivedDataPath build -UseModernBuildSystem=YES \
-          -workspace ExampleApp.xcworkspace \
-          -scheme ExampleApp \
+          -workspace NitroContactsExample.xcworkspace \
+          -scheme NitroContactsExample \
           -sdk iphonesimulator \
           -configuration Debug \
           -destination 'platform=iOS Simulator,name=iPhone 16' \
