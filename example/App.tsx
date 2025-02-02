@@ -1,13 +1,32 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { NitroContacts } from 'react-native-nitro-contacts';
+import {PermissionsAndroid, StyleSheet, Text, View} from 'react-native';
+import {NitroContacts} from 'react-native-nitro-contacts';
+import {NitroContact} from '../src/types';
 
 function App(): React.JSX.Element {
+  const [contacts, setContacts] = React.useState<NitroContact[]>([]);
+
+  React.useEffect(() => {
+    PermissionsAndroid.requestMultiple([
+      PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+      PermissionsAndroid.PERMISSIONS.WRITE_CONTACTS,
+    ]).then(console.log);
+    NitroContacts.getContacts()
+      .then(contacts => {
+        console.log('contacts: ', contacts);
+
+        setContacts(contacts);
+      })
+      .catch(console.error);
+    NitroContacts.getContact('1').then(
+      console.log,
+    );
+    NitroContacts.authorizationStatus().then(console.log);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-      {NitroContacts.sum(1, 2)}
-      </Text>
+      <Text style={styles.text}>{JSON.stringify(contacts, null, 4)}</Text>
     </View>
   );
 }
@@ -19,9 +38,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 40, 
-    color: 'green'
-  }
+    fontSize: 16,
+    color: 'green',
+  },
 });
 
 export default App;
