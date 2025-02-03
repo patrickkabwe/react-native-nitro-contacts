@@ -1,5 +1,5 @@
 version: 2
-
+enable-beta-ecosystems: true
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -19,6 +19,17 @@ updates:
       - "nitrogen"
       - "dependencies"
       - "kotlin"
+
+  - package-ecosystem: "bundler"
+    directories:
+      - "/example/ios/"
+      - "/example/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "ios"
+      - "dependencies"
+      - "ruby"
 
   - package-ecosystem: "npm"
     directories:
