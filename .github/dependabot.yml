@@ -29,15 +29,6 @@ updates:
       - "dependencies"
       - "ruby"
 
-  - package-ecosystem: "bundler"
-    directories:
-      - "/example/ios/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "ios"
-      - "dependencies"
-
   - package-ecosystem: "npm"
     directories:
       - "/example/"
