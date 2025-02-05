@@ -10,6 +10,7 @@ import com.facebook.react.module.model.ReactModuleInfoProvider;
 import com.facebook.react.TurboReactPackage;
 import com.margelo.nitro.core.HybridObject;
 import com.margelo.nitro.core.HybridObjectRegistry;
+import com.margelo.nitro.nitrocontacts.NitroContactsOnLoad;
 
 import java.util.HashMap;
 import java.util.function.Supplier;
@@ -29,6 +30,6 @@ public class NitroContactsPackage extends TurboReactPackage {
   }
 
   static {
-    System.loadLibrary("NitroContacts");
+    NitroContactsOnLoad.initializeNative();
   }
 }
