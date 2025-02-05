@@ -48,7 +48,7 @@ namespace margelo::nitro::nitrocontacts {
       explicit HybridNitroContactsSpec(): HybridObject(TAG) { }
 
       // Destructor
-      virtual ~HybridNitroContactsSpec() { }
+      ~HybridNitroContactsSpec() override = default;
 
     public:
       // Properties

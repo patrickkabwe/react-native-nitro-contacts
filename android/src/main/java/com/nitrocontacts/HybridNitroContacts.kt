@@ -47,9 +47,6 @@ class HybridNitroContacts: HybridNitroContactsSpec() {
         }
     }
 
-    override val memorySize: Long
-        get() = 5
-
     companion object {
         const val TAG = "HybridNitroContacts"
     }

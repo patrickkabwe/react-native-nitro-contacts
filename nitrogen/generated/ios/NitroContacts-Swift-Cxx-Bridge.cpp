@@ -65,7 +65,7 @@ namespace margelo::nitro::nitrocontacts::bridge::swift {
       throw std::runtime_error("Class \"HybridNitroContactsSpec\" is not implemented in Swift!");
     }
   #endif
-    NitroContacts::HybridNitroContactsSpec_cxx swiftPart = swiftWrapper->getSwiftPart();
+    NitroContacts::HybridNitroContactsSpec_cxx& swiftPart = swiftWrapper->getSwiftPart();
     return swiftPart.toUnsafe();
   }
 

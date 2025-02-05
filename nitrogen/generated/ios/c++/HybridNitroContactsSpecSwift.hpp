@@ -47,7 +47,9 @@ namespace margelo::nitro::nitrocontacts {
 
   public:
     // Get the Swift part
-    inline NitroContacts::HybridNitroContactsSpec_cxx getSwiftPart() noexcept { return _swiftPart; }
+    inline NitroContacts::HybridNitroContactsSpec_cxx& getSwiftPart() noexcept {
+      return _swiftPart;
+    }
 
   public:
     // Get memory pressure
