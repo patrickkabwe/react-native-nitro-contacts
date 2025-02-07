@@ -101,7 +101,7 @@ public class HybridNitroContactsSpec_cxx {
 
   // Methods
   @inline(__always)
-  public func getContacts() -> bridge.Result_std__shared_ptr_Promise_std__vector_NitroContact____ {
+  public final func getContacts() -> bridge.Result_std__shared_ptr_Promise_std__vector_NitroContact____ {
     do {
       let __result = try self.__implementation.getContacts()
       let __resultCpp = { () -> bridge.std__shared_ptr_Promise_std__vector_NitroContact___ in
@@ -126,7 +126,7 @@ public class HybridNitroContactsSpec_cxx {
   }
   
   @inline(__always)
-  public func getContact(id: std.string) -> bridge.Result_std__shared_ptr_Promise_std__optional_NitroContact____ {
+  public final func getContact(id: std.string) -> bridge.Result_std__shared_ptr_Promise_std__optional_NitroContact____ {
     do {
       let __result = try self.__implementation.getContact(id: String(id))
       let __resultCpp = { () -> bridge.std__shared_ptr_Promise_std__optional_NitroContact___ in
@@ -151,7 +151,7 @@ public class HybridNitroContactsSpec_cxx {
   }
   
   @inline(__always)
-  public func requestPermission() -> bridge.Result_std__shared_ptr_Promise_bool___ {
+  public final func requestPermission() -> bridge.Result_std__shared_ptr_Promise_bool___ {
     do {
       let __result = try self.__implementation.requestPermission()
       let __resultCpp = { () -> bridge.std__shared_ptr_Promise_bool__ in
@@ -170,7 +170,7 @@ public class HybridNitroContactsSpec_cxx {
   }
   
   @inline(__always)
-  public func authorizationStatus() -> bridge.Result_std__shared_ptr_Promise_NitroAuthorizationStatus___ {
+  public final func authorizationStatus() -> bridge.Result_std__shared_ptr_Promise_NitroAuthorizationStatus___ {
     do {
       let __result = try self.__implementation.authorizationStatus()
       let __resultCpp = { () -> bridge.std__shared_ptr_Promise_NitroAuthorizationStatus__ in
