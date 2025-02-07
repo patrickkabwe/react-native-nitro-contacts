@@ -44,7 +44,7 @@ namespace margelo::nitro {
 
   // C++ NitroAuthorizationStatus <> JS NitroAuthorizationStatus (union)
   template <>
-  struct JSIConverter<NitroAuthorizationStatus> {
+  struct JSIConverter<NitroAuthorizationStatus> final {
     static inline NitroAuthorizationStatus fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

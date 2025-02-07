@@ -9,7 +9,7 @@ import Foundation
 import NitroModules
 
 /// See ``HybridNitroContactsSpec``
-public protocol HybridNitroContactsSpec_protocol: HybridObjectSpec {
+public protocol HybridNitroContactsSpec_protocol: HybridObject {
   // Properties
   
 

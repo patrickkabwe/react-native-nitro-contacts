@@ -43,7 +43,7 @@ namespace margelo::nitro {
 
   // C++ NitroContact <> JS NitroContact (object)
   template <>
-  struct JSIConverter<NitroContact> {
+  struct JSIConverter<NitroContact> final {
     static inline NitroContact fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return NitroContact(
